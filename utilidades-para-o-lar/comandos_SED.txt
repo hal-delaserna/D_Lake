@@ -1,0 +1,36 @@
+
+#_________ APAGAR AS ASPAS I
+
+
+\"@\"
+
+sed 's/\",\"/#/g' arquivo.csv
+sed 's/^\"/@/g' arquivo.csv
+sed 's/\"$/@/g' arquivo.csv
+
+    # padrão CRFL (\r)
+    sed -i  's/;/,/g   ;  s/","/@/g  ;   s/^"/#/g  ;   s/"\r/#/g  ;   s/@/;/g  ;   s/#//g'   Guia_de_Utilizacao_Autorizada.csv  
+
+    # padrão Outros ($)
+    sed -i  's/;/,/g   ;  s/","/@/g  ;   s/^"/#/g  ;   s/"$/#/g  ;   s/@/;/g  ;   s/#//g'   Guia_de_Utilizacao_Autorizada.csv  
+
+echo "D:\Users\humberto.serna" | sed 's/\\/\//g'
+
+
+#_________ APAGAR AS ASPAS II
+
+sed  's/[[:alpha:]]//g' K3241.K03200Y3.D10213.ESTABELE  | sed 's/[[:blank:]]//g' | sed 's/\"\"\"/\"\"/g' | sed 's/\"\"\"/\"\"/g'  > arq3.txt
+sed  's/[[:alpha:]]//g' K3241.K03200Y4.D10213.ESTABELE  | sed 's/[[:blank:]]//g' | sed 's/\"\"\"/\"\"/g' | sed 's/\"\"\"/\"\"/g'  > arq4.txt
+sed  's/[[:alpha:]]//g' K3241.K03200Y5.D10213.ESTABELE  | sed 's/[[:blank:]]//g' | sed 's/\"\"\"/\"\"/g' | sed 's/\"\"\"/\"\"/g'  > arq5.txt
+
+
+#_________ PROCURA STRING
+
+# procurar o ano de "2016", :
+cat -n  Cfem.csv | sed -n '/\s\"2016\",/p' | head
+
+
+
+# imprime apenas caracteres de uma linha conforme regex
+
+ sed -n '1,12p'  CFEM.txt | grep -o '^............' 
