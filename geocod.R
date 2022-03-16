@@ -1,7 +1,7 @@
 geocod <-
   read.table(
     file = paste(sep = "",
-                 "./D_Lake/",
+                 "D:/Users/humberto.serna/Documents/D_Lake/",
                  "GeoCodigos_IBGE.csv"),
     header = TRUE,
     sep = ";",
